@@ -38,12 +38,13 @@ class ViewController: UIViewController {
             x: 0,
             y: 0,
             width: tableView.frame.width,
-            height: 50))
+            height: 60))
         
         let headerView = tableView.tableHeaderView!
         
         let titleLabel = UILabel()
-        titleLabel.text = "Lesson 4"
+        titleLabel.text = "Task 4"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         let shuffleButton = UIButton()
@@ -57,10 +58,10 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor, constant: -headerView.frame.height/3),
             
             shuffleButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -30),
-            shuffleButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            shuffleButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor, constant: -headerView.frame.height/3)
         ])
         
         tableView.tableHeaderView = headerView
